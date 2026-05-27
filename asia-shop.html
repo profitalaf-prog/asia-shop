@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Asia Shop Saarbrücken – Ihr asiatischer Lebensmittelladen in der Trierer Straße 2. Authentische Produkte aus ganz Asien.">
+<meta name="keywords" content="Asia Shop, Saarbrücken, asiatische Lebensmittel, Asia Markt, Trierer Straße">
+<title>Asia Shop Saarbrücken</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-deep: #1a4a1a;
+    --green-mid: #2d7a2d;
+    --green-light: #4caf50;
+    --green-pale: #e8f5e9;
+    --red-deep: #8b1a1a;
+    --red-mid: #c0392b;
+    --red-accent: #e53935;
+    --gold: #c9a84c;
+    --gold-light: #f5e6b8;
+    --cream: #fdfaf3;
+    --ink: #1c1c1c;
+    --ink-soft: #3d3d3d;
+    --ink-muted: #666;
+    --white: #ffffff;
+    --border: rgba(0,0,0,0.08);
+    --shadow: 0 4px 24px rgba(0,0,0,0.10);
+    --shadow-lg: 0 12px 48px rgba(0,0,0,0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* ── NAVIGATION ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(26, 74, 26, 0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 2px solid var(--gold);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .nav-logo {
+    font-family: 'Noto Serif SC', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-logo .hanzi {
+    font-size: 1.6rem;
+    color: var(--red-accent);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 0.2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.9rem;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--gold);
+    background: rgba(201,168,76,0.12);
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--gold);
+    transition: all 0.3s;
+    border-radius: 2px;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background:
+      linear-gradient(160deg, rgba(26,74,26,0.92) 0%, rgba(26,74,26,0.75) 40%, rgba(139,26,26,0.55) 100%),
+      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80"><rect width="80" height="80" fill="%231a4a1a"/><circle cx="40" cy="40" r="25" fill="none" stroke="%23c9a84c" stroke-width="0.5" opacity="0.3"/><line x1="40" y1="0" x2="40" y2="80" stroke="%23c9a84c" stroke-width="0.3" opacity="0.2"/><line x1="0" y1="40" x2="80" y2="40" stroke="%23c9a84c" stroke-width="0.3" opacity="0.2"/></svg>') repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '亚洲';
+    position: absolute;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 28vw;
+    color: rgba(201,168,76,0.04);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+    animation: fadeDown 0.8s ease both;
+  }
+
+  .hero-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: clamp(2.8rem, 8vw, 6rem);
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 0.4rem;
+    animation: fadeDown 0.8s 0.1s ease both;
+  }
+
+  .hero-title .accent { color: var(--gold); }
+
+  .hero-hanzi {
+    font-family: 'Noto Serif SC', serif;
+    font-size: clamp(1.4rem, 4vw, 2.2rem);
+    color: rgba(201,168,76,0.7);
+    letter-spacing: 0.3em;
+    margin-bottom: 1.5rem;
+    animation: fadeDown 0.8s 0.2s ease both;
+  }
+
+  .hero-desc {
+    color: rgba(255,255,255,0.78);
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    animation: fadeDown 0.8s 0.3s ease both;
+  }
+
+  .hero-cta-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeDown 0.8s 0.4s ease both;
+  }
+
+  .btn-primary {
+    background: var(--red-mid);
+    color: white;
+    border: none;
+    padding: 0.85rem 2rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    box-shadow: 0 4px 16px rgba(192,57,43,0.4);
+  }
+
+  .btn-primary:hover {
+    background: var(--red-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(192,57,43,0.5);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--gold);
+    border: 1.5px solid rgba(201,168,76,0.6);
+    padding: 0.85rem 2rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(201,168,76,0.1);
+    border-color: var(--gold);
+    transform: translateY(-2px);
+  }
+
+  .hero-scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,0.4);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    animation: pulse 2s infinite;
+  }
+
+  .hero-scroll-hint .arrow { font-size: 1.2rem; }
+
+  /* ── STATUS BAR ── */
+  .status-bar {
+    background: var(--green-deep);
+    padding: 0.75rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .status-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.8);
+    font-size: 0.82rem;
+    font-weight: 500;
+  }
+
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4caf50;
+    animation: pulse-dot 1.5s infinite;
+  }
+
+  .status-dot.closed { background: var(--red-accent); animation: none; }
+
+  /* ── SECTIONS GENERAL ── */
+  section { padding: 5rem 2rem; }
+
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .section-tag {
+    display: inline-block;
+    background: var(--green-pale);
+    color: var(--green-mid);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.9rem;
+    border-radius: 100px;
+    margin-bottom: 0.8rem;
+    border: 1px solid rgba(45,122,45,0.2);
+  }
+
+  .section-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    color: var(--green-deep);
+    line-height: 1.2;
+    margin-bottom: 0.8rem;
+  }
+
+  .section-title .red { color: var(--red-mid); }
+
+  .section-subtitle {
+    color: var(--ink-muted);
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--green-mid), var(--red-mid));
+    margin: 1rem auto 0;
+    border-radius: 2px;
+  }
+
+  /* ── ABOUT / INHABER ── */
+  #inhaber { background: white; }
+
+  .inhaber-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .inhaber-img-wrap {
+    position: relative;
+  }
+
+  .inhaber-img-frame {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background: linear-gradient(135deg, var(--green-pale) 0%, var(--gold-light) 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(201,168,76,0.3);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .inhaber-placeholder {
+    text-align: center;
+    color: var(--green-mid);
+  }
+
+  .inhaber-placeholder .icon {
+    font-size: 5rem;
+    opacity: 0.4;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .inhaber-placeholder p {
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    font-style: italic;
+  }
+
+  .inhaber-corner {
+    position: absolute;
+    bottom: -12px;
+    right: -12px;
+    width: 80px;
+    height: 80px;
+    background: var(--red-mid);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.4rem;
+    border: 3px solid white;
+    box-shadow: var(--shadow);
+  }
+
+  .inhaber-content .eyebrow {
+    color: var(--green-mid);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+
+  .inhaber-name {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 2rem;
+    color: var(--green-deep);
+    margin-bottom: 0.4rem;
+  }
+
+  .inhaber-role {
+    color: var(--red-mid);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .inhaber-bio {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .werte-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .wert-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    border-left: 3px solid var(--green-mid);
+  }
+
+  .wert-card.red { border-left-color: var(--red-mid); }
+
+  .wert-title {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--green-deep);
+    margin-bottom: 0.3rem;
+  }
+
+  .wert-card.red .wert-title { color: var(--red-deep); }
+
+  .wert-desc {
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+
+  /* ── SORTIMENT ── */
+  #sortiment { background: var(--cream); }
+
+  .sortiment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .sortiment-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.8rem 1.2rem;
+    text-align: center;
+    border: 1px solid var(--border);
+    transition: all 0.25s;
+    cursor: default;
+  }
+
+  .sortiment-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+    border-color: rgba(45,122,45,0.2);
+  }
+
+  .sortiment-icon {
+    font-size: 2.4rem;
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+
+  .sortiment-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--green-deep);
+    margin-bottom: 0.3rem;
+  }
+
+  .sortiment-sub {
+    font-size: 0.72rem;
+    color: var(--ink-muted);
+  }
+
+  /* ── ÖFFNUNGSZEITEN ── */
+  #oeffnung { background: white; }
+
+  .oeffnung-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .hours-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .hours-table tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+  }
+
+  .hours-table tr:hover { background: var(--cream); }
+
+  .hours-table tr.today {
+    background: var(--green-pale);
+    border-left: 3px solid var(--green-mid);
+  }
+
+  .hours-table tr.today td { color: var(--green-deep); font-weight: 600; }
+
+  .hours-table td {
+    padding: 0.8rem 0.6rem;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+
+  .hours-table td:first-child {
+    font-weight: 500;
+    color: var(--ink);
+    width: 140px;
+  }
+
+  .hours-table td:last-child { text-align: right; }
+
+  .closed-tag {
+    background: #fdecea;
+    color: var(--red-mid);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+    text-transform: uppercase;
+  }
+
+  .open-tag {
+    background: var(--green-pale);
+    color: var(--green-mid);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+    text-transform: uppercase;
+  }
+
+  .oeffnung-info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .info-card {
+    background: var(--cream);
+    border-radius: 10px;
+    padding: 1.4rem;
+    border: 1px solid var(--border);
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .info-card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--green-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    color: var(--green-mid);
+    border: 1px solid rgba(45,122,45,0.15);
+  }
+
+  .info-card-icon.red {
+    background: #fdecea;
+    color: var(--red-mid);
+    border-color: rgba(192,57,43,0.15);
+  }
+
+  .info-card-title {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+
+  .info-card-text {
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+
+  /* ── GALERIE ── */
+  #galerie { background: var(--green-deep); }
+
+  #galerie .section-tag { background: rgba(201,168,76,0.15); color: var(--gold); border-color: rgba(201,168,76,0.3); }
+  #galerie .section-title { color: white; }
+  #galerie .section-subtitle { color: rgba(255,255,255,0.6); }
+  #galerie .divider { background: linear-gradient(90deg, var(--gold), var(--red-accent)); }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 1rem;
+  }
+
+  .gallery-item {
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: rgba(255,255,255,0.3);
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    transition: all 0.3s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gallery-item:hover {
+    border-color: rgba(201,168,76,0.4);
+    background: rgba(201,168,76,0.05);
+    transform: scale(1.01);
+  }
+
+  .gallery-item.large {
+    grid-column: span 2;
+    aspect-ratio: 16/9;
+  }
+
+  .gallery-item-icon { font-size: 2rem; opacity: 0.3; }
+
+  .gallery-item-label {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.25);
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .gallery-hint {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: rgba(255,255,255,0.35);
+    font-size: 0.78rem;
+    font-style: italic;
+  }
+
+  /* ── KONTAKT ── */
+  #kontakt { background: var(--cream); }
+
+  .kontakt-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .kontakt-info { display: flex; flex-direction: column; gap: 1.2rem; }
+
+  .kontakt-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.4rem;
+    border: 1px solid var(--border);
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    transition: box-shadow 0.2s;
+  }
+
+  .kontakt-card:hover { box-shadow: var(--shadow); }
+
+  .kontakt-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    background: var(--green-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    color: var(--green-mid);
+  }
+
+  .kontakt-icon.red { background: #fdecea; color: var(--red-mid); }
+  .kontakt-icon.gold { background: var(--gold-light); color: #7a5c00; }
+
+  .kontakt-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 0.3rem;
+  }
+
+  .kontakt-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+  }
+
+  .kontakt-value a {
+    color: var(--green-mid);
+    text-decoration: none;
+  }
+
+  .kontakt-value a:hover { text-decoration: underline; }
+
+  .kontakt-note { font-size: 0.78rem; color: var(--ink-muted); }
+
+  /* ── KARTE ── */
+  .map-wrap {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .map-header {
+    padding: 1rem 1.4rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .map-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--red-mid);
+  }
+
+  .map-title { font-weight: 600; font-size: 0.9rem; color: var(--ink); }
+  .map-address { font-size: 0.78rem; color: var(--ink-muted); margin-left: auto; }
+
+  .map-iframe-wrap {
+    position: relative;
+    width: 100%;
+    height: 320px;
+  }
+
+  .map-iframe-wrap iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+
+  .map-footer {
+    padding: 0.8rem 1.4rem;
+    background: var(--cream);
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .map-footer-text { font-size: 0.78rem; color: var(--ink-muted); }
+
+  .map-link {
+    background: var(--green-mid);
+    color: white;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: background 0.2s;
+  }
+
+  .map-link:hover { background: var(--green-deep); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--green-deep);
+    color: rgba(255,255,255,0.7);
+    padding: 3rem 2rem 1.5rem;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-brand .logo {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.4rem;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+  }
+
+  .footer-brand p {
+    font-size: 0.82rem;
+    line-height: 1.7;
+    max-width: 260px;
+  }
+
+  .footer-col h4 {
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .footer-col ul { list-style: none; }
+
+  .footer-col ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-col ul li a {
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    font-size: 0.82rem;
+    transition: color 0.2s;
+  }
+
+  .footer-col ul li a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .footer-bottom p { font-size: 0.75rem; }
+
+  .footer-hanzi {
+    font-family: 'Noto Serif SC', serif;
+    color: rgba(201,168,76,0.3);
+    font-size: 1.4rem;
+    letter-spacing: 0.3em;
+  }
+
+  /* ── SCROLL-TO-TOP ── */
+  #scrollTop {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 46px;
+    height: 46px;
+    background: var(--green-deep);
+    color: var(--gold);
+    border: 2px solid rgba(201,168,76,0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s;
+    z-index: 999;
+    box-shadow: var(--shadow);
+  }
+
+  #scrollTop.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  #scrollTop:hover {
+    background: var(--green-mid);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.4; }
+    50%       { opacity: 1; }
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(76,175,80,0.5); }
+    50%       { box-shadow: 0 0 0 5px rgba(76,175,80,0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 0 1.2rem; }
+
+    .nav-links { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: rgba(26,74,26,0.98); padding: 1rem; gap: 0.2rem; border-bottom: 2px solid var(--gold); }
+    .nav-links.open { display: flex; }
+    .nav-links a { padding: 0.6rem 1rem; border-radius: 6px; font-size: 0.9rem; }
+
+    .hamburger { display: flex; }
+
+    section { padding: 3.5rem 1.2rem; }
+
+    .inhaber-grid,
+    .oeffnung-grid,
+    .kontakt-grid,
+    .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-item.large { grid-column: span 2; }
+
+    .werte-grid { grid-template-columns: 1fr; }
+
+    .footer-bottom { flex-direction: column; text-align: center; }
+
+    .status-bar { gap: 1rem; padding: 0.6rem 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="mainNav">
+  <a class="nav-logo" href="#top">
+    <span class="hanzi">亚</span>
+    Asia Shop
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#inhaber">Inhaber</a></li>
+    <li><a href="#sortiment">Sortiment</a></li>
+    <li><a href="#oeffnung">Öffnungszeiten</a></li>
+    <li><a href="#galerie">Galerie</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menü öffnen" role="button" tabindex="0">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+<!-- STATUS BAR -->
+<div class="status-bar" id="statusBar" style="margin-top:64px;">
+  <div class="status-item">
+    <div class="status-dot" id="statusDot"></div>
+    <span id="statusText">Wird geladen...</span>
+  </div>
+  <div class="status-item">📍 Trierer Straße 2, 66111 Saarbrücken</div>
+  <div class="status-item">📞 Jetzt anrufen</div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-badge">✦ Ihr Asia Markt in Saarbrücken ✦</div>
+  <h1 class="hero-title"><span class="accent">Asia</span> Shop</h1>
+  <p class="hero-hanzi">亚洲美食商店</p>
+  <p class="hero-desc">Authentische Produkte aus China, Japan, Korea, Vietnam, Thailand und ganz Asien – mitten in Saarbrücken. Entdecken Sie Vielfalt auf über hundert Metern.</p>
+  <div class="hero-cta-row">
+    <a href="#oeffnung" class="btn-primary">🕐 Öffnungszeiten</a>
+    <a href="#kontakt" class="btn-secondary">📍 So finden Sie uns</a>
+  </div>
+  <div class="hero-scroll-hint">
+    <span>Entdecken</span>
+    <span class="arrow">↓</span>
+  </div>
+</section>
+
+<!-- INHABER -->
+<section id="inhaber">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Über uns</span>
+      <h2 class="section-title">Der <span class="red">Inhaber</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="inhaber-grid">
+      <div class="inhaber-img-wrap reveal">
+        <div class="inhaber-img-frame">
+          <div class="inhaber-placeholder">
+            <span class="icon">👤</span>
+            <p>Foto des Inhabers<br>kann hier eingefügt werden</p>
+          </div>
+          <div class="inhaber-corner">店主</div>
+        </div>
+      </div>
+      <div class="inhaber-content reveal">
+        <p class="eyebrow">Persönlich & Mit Leidenschaft</p>
+        <h3 class="inhaber-name">Der Inhaber</h3>
+        <p class="inhaber-role">Gründer &amp; Inhaber · Asia Shop Saarbrücken</p>
+        <p class="inhaber-bio">
+          Mit echter Begeisterung für asiatische Küche und Kultur habe ich den Asia Shop gegründet – als Ort, an dem Einheimische und Menschen mit Wurzeln in Asien echte, authentische Produkte finden können. Jedes Produkt in unserem Sortiment wurde persönlich ausgewählt. Qualität und Vertrauen stehen für mich an erster Stelle.
+        </p>
+        <div class="werte-grid">
+          <div class="wert-card">
+            <div class="wert-title">🌿 Authentizität</div>
+            <div class="wert-desc">Nur echte, original importierte Produkte aus ganz Asien – kein Kompromiss.</div>
+          </div>
+          <div class="wert-card red">
+            <div class="wert-title">❤️ Gemeinschaft</div>
+            <div class="wert-desc">Ein Treffpunkt für alle, die asiatische Küche und Kultur lieben.</div>
+          </div>
+          <div class="wert-card">
+            <div class="wert-title">🤝 Vertrauen</div>
+            <div class="wert-desc">Persönliche Beratung und ein offenes Ohr für jeden Kunden.</div>
+          </div>
+          <div class="wert-card red">
+            <div class="wert-title">✨ Qualität</div>
+            <div class="wert-desc">Sorgfältig ausgewähltes Sortiment – immer frisch und hochwertig.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SORTIMENT -->
+<section id="sortiment">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Was wir anbieten</span>
+      <h2 class="section-title">Unser <span class="red">Sortiment</span></h2>
+      <p class="section-subtitle">Entdecken Sie eine riesige Auswahl an authentischen Produkten aus ganz Asien.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="sortiment-grid reveal">
+      <div class="sortiment-card">
+        <span class="sortiment-icon">🍜</span>
+        <div class="sortiment-label">Nudeln &amp; Reis</div>
+        <div class="sortiment-sub">Ramen, Udon, Glasnudeln, Jasminreis</div>
+      </div>
+      <div class="sortiment-card">
+        <span class="sortiment-icon">🥫</span>
+        <div class="sortiment-label">Saucen &amp; Pasten</div>
+        <div class="sortiment-sub">Sojasauce, Miso, Sriracha, Hoisin</div>
+      </div>
+      <div class="sortiment-card">
+        <span class="sortiment-icon">🍵</span>
+        <div class="sortiment-label">Tee &amp; Getränke</div>
+        <div class="sortiment-sub">Grüntee, Bubble Tea, Kokoswasser</div>
+      </div>
+      <div class="sortiment-card">
+        <span class="sortiment-icon">🍱</span>
+        <div class="sortiment-label">Tiefkühl &amp; Fertig</div>
+        <div class="sortiment-sub">Dumplings, Gyoza, Frühlingsrollen</div>
+      </div>
+      <div class="sortiment-card">
+        <span class="sortiment-icon">🌶️</span>
+        <div class="sortiment-label">Gewürze &amp; Kräuter</div>
+        <div class="sortiment-sub">Fünf-Gewürz, Zitronengras, Galangal</div>
+      </div>
+      <div class="sortiment-card">
+        <span class="sortiment-icon">🍬</span>
+        <div class="sortiment-label">Snacks &amp; Süßes</div>
+        <div class="sortiment-sub">Mochi, Pocky, Chips &amp; Bonbons</div>
+      </div>
+      <div class="sortiment-card">
+        <span class="sortiment-icon">🥢</span>
+        <div class="sortiment-label">Küchenutensilien</div>
+        <div class="sortiment-sub">Woks, Essstäbchen, Reiskocher</div>
+      </div>
+      <div class="sortiment-card">
+        <span class="sortiment-icon">🌸</span>
+        <div class="sortiment-label">Kosmetik &amp; Pflege</div>
+        <div class="sortiment-sub">K-Beauty, Masken, Hautpflege</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ÖFFNUNGSZEITEN -->
+<section id="oeffnung">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Wann wir für Sie da sind</span>
+      <h2 class="section-title">Öffnungs<span class="red">zeiten</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="oeffnung-grid">
+      <div class="reveal">
+        <table class="hours-table" id="hoursTable">
+          <tbody>
+            <tr data-day="1">
+              <td>Montag</td>
+              <td>09:00 – 19:00 Uhr</td>
+              <td><span class="open-tag">Offen</span></td>
+            </tr>
+            <tr data-day="2">
+              <td>Dienstag</td>
+              <td>09:00 – 19:00 Uhr</td>
+              <td><span class="open-tag">Offen</span></td>
+            </tr>
+            <tr data-day="3">
+              <td>Mittwoch</td>
+              <td>09:00 – 19:00 Uhr</td>
+              <td><span class="open-tag">Offen</span></td>
+            </tr>
+            <tr data-day="4">
+              <td>Donnerstag</td>
+              <td>09:00 – 19:00 Uhr</td>
+              <td><span class="open-tag">Offen</span></td>
+            </tr>
+            <tr data-day="5">
+              <td>Freitag</td>
+              <td>09:00 – 20:00 Uhr</td>
+              <td><span class="open-tag">Offen</span></td>
+            </tr>
+            <tr data-day="6">
+              <td>Samstag</td>
+              <td>09:00 – 18:00 Uhr</td>
+              <td><span class="open-tag">Offen</span></td>
+            </tr>
+            <tr data-day="0">
+              <td>Sonntag</td>
+              <td>—</td>
+              <td><span class="closed-tag">Geschlossen</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-size:0.75rem;color:var(--ink-muted);margin-top:0.8rem;">* Öffnungszeiten können an Feiertagen abweichen.</p>
+      </div>
+      <div class="oeffnung-info-cards reveal">
+        <div class="info-card">
+          <div class="info-card-icon">🚌</div>
+          <div>
+            <div class="info-card-title">Öffentliche Verkehrsmittel</div>
+            <div class="info-card-text">Sehr gut erreichbar mit Bus &amp; Bahn. Haltestelle in unmittelbarer Nähe der Trierer Straße.</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon red">🅿️</div>
+          <div>
+            <div class="info-card-title">Parkmöglichkeiten</div>
+            <div class="info-card-text">Parkplätze in der näheren Umgebung vorhanden. Parkhäuser in der Innenstadt erreichbar.</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">♿</div>
+          <div>
+            <div class="info-card-title">Barrierefreiheit</div>
+            <div class="info-card-text">Der Shop ist ebenerdig zugänglich. Für Fragen stehen wir gerne persönlich zur Verfügung.</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon red">💳</div>
+          <div>
+            <div class="info-card-title">Zahlungsmittel</div>
+            <div class="info-card-text">Bar und mit EC-Karte. Bitte erkundigen Sie sich bei uns nach weiteren Möglichkeiten.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<section id="galerie">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Einblicke</span>
+      <h2 class="section-title" style="color:white;">Unser <span style="color:var(--gold);">Shop</span></h2>
+      <p class="section-subtitle">Ein Blick in unsere Welt voller Farben, Aromen und Kulturen.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item large">
+        <div class="gallery-item-icon">🏪</div>
+        <div class="gallery-item-label">Hauptfoto des Shops – hier einfügen</div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-item-icon">🛒</div>
+        <div class="gallery-item-label">Innenansicht</div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-item-icon">🥢</div>
+        <div class="gallery-item-label">Sortiment</div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-item-icon">🍜</div>
+        <div class="gallery-item-label">Nudeln &amp; Gewürze</div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-item-icon">🌸</div>
+        <div class="gallery-item-label">Delikatessen</div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-item-icon">🍵</div>
+        <div class="gallery-item-label">Tee-Auswahl</div>
+      </div>
+    </div>
+    <p class="gallery-hint reveal">📷 Eigene Fotos können in den markierten Bereichen eingefügt werden</p>
+  </div>
+</section>
+
+<!-- KONTAKT & KARTE -->
+<section id="kontakt">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Besuchen Sie uns</span>
+      <h2 class="section-title">Kontakt &amp; <span class="red">Anfahrt</span></h2>
+      <p class="section-subtitle">Wir freuen uns auf Ihren Besuch in der Trierer Straße 2, Saarbrücken.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="kontakt-grid">
+      <div class="kontakt-info reveal">
+        <div class="kontakt-card">
+          <div class="kontakt-icon">📍</div>
+          <div>
+            <div class="kontakt-label">Adresse</div>
+            <div class="kontakt-value">Trierer Straße 2</div>
+            <div class="kontakt-note">66111 Saarbrücken, Saarland</div>
+          </div>
+        </div>
+        <div class="kontakt-card">
+          <div class="kontakt-icon red">📞</div>
+          <div>
+            <div class="kontakt-label">Telefon</div>
+            <div class="kontakt-value"><a href="tel:+4968112345678">+49 681 123 456 78</a></div>
+            <div class="kontakt-note">Bitte aktuelle Nummer eintragen</div>
+          </div>
+        </div>
+        <div class="kontakt-card">
+          <div class="kontakt-icon gold">✉️</div>
+          <div>
+            <div class="kontakt-label">E-Mail</div>
+            <div class="kontakt-value"><a href="mailto:info@asia-shop-saarbruecken.de">info@asia-shop-saarbruecken.de</a></div>
+            <div class="kontakt-note">Bitte aktuelle E-Mail eintragen</div>
+          </div>
+        </div>
+        <div class="kontakt-card">
+          <div class="kontakt-icon">🕐</div>
+          <div>
+            <div class="kontakt-label">Heute geöffnet</div>
+            <div class="kontakt-value" id="todayHours">Wird geladen...</div>
+            <div class="kontakt-note" id="todayStatus"></div>
+          </div>
+        </div>
+      </div>
+      <div class="map-wrap reveal">
+        <div class="map-header">
+          <div class="map-dot"></div>
+          <span class="map-title">Asia Shop Saarbrücken</span>
+          <span class="map-address">Trierer Str. 2, 66111 SB</span>
+        </div>
+        <div class="map-iframe-wrap">
+          <iframe
+            src="https://www.openstreetmap.org/export/embed.html?bbox=6.9870%2C49.2290%2C6.9970%2C49.2350&layer=mapnik&marker=49.2320%2C6.9920"
+            allowfullscreen
+            loading="lazy"
+            title="Standort Asia Shop Saarbrücken"
+          ></iframe>
+        </div>
+        <div class="map-footer">
+          <span class="map-footer-text">Trierer Straße 2 · 66111 Saarbrücken</span>
+          <a href="https://www.openstreetmap.org/?mlat=49.2320&mlon=6.9920#map=17/49.2320/6.9920" target="_blank" rel="noopener" class="map-link">
+            Route planen ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">亚 Asia Shop</div>
+      <p>Ihr asiatischer Lebensmittelladen in Saarbrücken. Authentische Produkte, persönliche Beratung und ein herzliches Willkommen für alle.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#inhaber">Über uns</a></li>
+        <li><a href="#sortiment">Sortiment</a></li>
+        <li><a href="#oeffnung">Öffnungszeiten</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="#">Trierer Straße 2</a></li>
+        <li><a href="#">66111 Saarbrücken</a></li>
+        <li><a href="tel:+4968112345678">+49 681 123 456 78</a></li>
+        <li><a href="mailto:info@asia-shop-saarbruecken.de">E-Mail senden</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Asia Shop Saarbrücken · Trierer Straße 2 · Alle Rechte vorbehalten</p>
+    <span class="footer-hanzi">亚洲美食</span>
+  </div>
+</footer>
+
+<!-- SCROLL TO TOP -->
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Nach oben scrollen">↑</button>
+
+<script>
+  // ── HAMBURGER MENU ──
+  function toggleMenu() {
+    const nl = document.getElementById('navLinks');
+    nl.classList.toggle('open');
+  }
+
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+
+  // ── ÖFFNUNGSSTATUS (Echtzeit) ──
+  const schedule = {
+    0: null,
+    1: [9, 19],
+    2: [9, 19],
+    3: [9, 19],
+    4: [9, 19],
+    5: [9, 20],
+    6: [9, 18]
+  };
+
+  const dayNames = ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'];
+
+  function checkStatus() {
+    const now = new Date();
+    const day = now.getDay();
+    const hour = now.getHours() + now.getMinutes() / 60;
+    const hours = schedule[day];
+
+    const dot = document.getElementById('statusDot');
+    const txt = document.getElementById('statusText');
+    const todayH = document.getElementById('todayHours');
+    const todayS = document.getElementById('todayStatus');
+
+    if (!hours) {
+      dot.classList.add('closed');
+      txt.textContent = 'Heute geschlossen (Sonntag)';
+      todayH.textContent = 'Geschlossen';
+      todayS.textContent = 'Wir sind morgen wieder für Sie da.';
+    } else {
+      const isOpen = hour >= hours[0] && hour < hours[1];
+      todayH.textContent = hours[0] + ':00 – ' + hours[1] + ':00 Uhr';
+      if (isOpen) {
+        dot.classList.remove('closed');
+        txt.textContent = 'Jetzt geöffnet · Schließt um ' + hours[1] + ':00 Uhr';
+        todayS.textContent = '✅ Wir sind gerade für Sie geöffnet!';
+        todayS.style.color = 'var(--green-mid)';
+      } else {
+        dot.classList.add('closed');
+        const opensAt = hour < hours[0] ? 'Öffnet heute um ' + hours[0] + ':00 Uhr' : 'Heute geschlossen';
+        txt.textContent = opensAt;
+        todayS.textContent = '⏰ ' + opensAt;
+        todayS.style.color = 'var(--red-mid)';
+      }
+    }
+
+    // Heutigen Tag in Tabelle markieren
+    document.querySelectorAll('#hoursTable tr').forEach(row => {
+      row.classList.remove('today');
+      if (parseInt(row.dataset.day) === day) row.classList.add('today');
+    });
+  }
+
+  checkStatus();
+  setInterval(checkStatus, 60000);
+
+  // ── SCROLL-TO-TOP ──
+  const scrollBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    scrollBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+
+  // ── REVEAL ON SCROLL ──
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  revealEls.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
